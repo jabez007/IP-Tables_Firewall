@@ -48,5 +48,8 @@ iptables -A FORWARD -j LOG
 # Save our iptables configuration
 iptables-save > /etc/sysconfig/iptables
 
+# Put our rules into effect
+systemctl restart iptables
+
 unset IFS
 exit 0
