@@ -46,6 +46,7 @@ iptables -A OUTPUT -j LOG
 iptables -A FORWARD -j LOG
 
 # Save our iptables configuration
+cat /etc/sysconfig/iptables >  "/etc/sysconfig/iptables.$(date +%s)"
 iptables-save > /etc/sysconfig/iptables
 
 # Put our rules into effect
