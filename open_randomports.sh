@@ -18,9 +18,9 @@ do
         if [ $(($tempRandom%2)) -eq 0 ];
         then
                 # This is even numbers
-ncat -4 --keep-open --listen --source-port $tempRandom --sh-exec 'printf "%s\n" "IPTABLES: This is A Good Port, keep me open"' &
+                ncat -4 --keep-open --listen --source-port $tempRandom --sh-exec 'printf "%s\n" "IPTABLES: This is A Good Port, keep me open"' &
         else
                 # This is odd numbers
-ncat -4 --keep-open --listen --source-port $tempRandom --sh-exec 'printf "%s\n" "IPTABLES: This is a Bad Port, close me"' &
+                ncat -4 --keep-open --listen --source-port $tempRandom --sh-exec 'printf "%s\n" "IPTABLES: This is a Bad Port, close me"' &
         fi
 done
